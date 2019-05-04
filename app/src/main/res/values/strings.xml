@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CustomView</string>
+
+    <array name="main_items">
+        <item>自定义View</item>
+        <item>组合控件Toolbar</item>
+        <item>流式布局</item>
+    </array>
+</resources>
