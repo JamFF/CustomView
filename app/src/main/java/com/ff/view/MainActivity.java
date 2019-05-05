@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import com.ff.view.custom.CarFragment;
 import com.ff.view.layout.FlowLayoutFragment;
+import com.ff.view.recyclerview.RecyclerViewFragment;
 import com.ff.view.toolbar.ToolbarFragment;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnListItemClickListener {
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
                 break;
             case 2:// 流式布局
                 fragment = new FlowLayoutFragment();
+                break;
+            case 3:// 手写RecyclerView
+                fragment = new RecyclerViewFragment();
                 break;
             default:
                 return;
