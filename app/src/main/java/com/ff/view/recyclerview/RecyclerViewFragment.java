@@ -32,11 +32,13 @@ public class RecyclerViewFragment extends Fragment {
                 @Override
                 public View onCreateViewHolder(int position, View convertView, ViewGroup parent) {
                     if (position % 2 == 0) {
+                        // 外层布局的高度设置无效，为了方便测量子View，在下面getHeight中返回的才是真正的高度
                         convertView = LayoutInflater.from(parent.getContext()).inflate(
                                 R.layout.item_table, parent, false);
                         TextView textView = convertView.findViewById(R.id.text1);
                         textView.setText("网易课堂 " + position);
                     } else {
+                        // 外层布局的高度设置无效，为了方便测量子View，在下面getHeight中返回的才是真正的高度
                         convertView = LayoutInflater.from(parent.getContext()).inflate(
                                 R.layout.item_table2, parent, false);
                         TextView textView = convertView.findViewById(R.id.text2);
@@ -51,8 +53,6 @@ public class RecyclerViewFragment extends Fragment {
                         TextView textView = convertView.findViewById(R.id.text1);
                         textView.setText("网易课堂 " + position);
                     } else {
-                        convertView = LayoutInflater.from(parent.getContext()).inflate(
-                                R.layout.item_table2, parent, false);
                         TextView textView = convertView.findViewById(R.id.text2);
                         textView.setText("网易图标 " + position);
                     }
@@ -80,7 +80,7 @@ public class RecyclerViewFragment extends Fragment {
 
                 @Override
                 public int getHeight(int index) {
-                    return 150;
+                    return 200;
                 }
             });
         }
@@ -128,7 +128,7 @@ public class RecyclerViewFragment extends Fragment {
 
             @Override
             public int getHeight(int index) {
-                return 200;
+                return 120;
             }
         });
 

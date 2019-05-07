@@ -98,9 +98,9 @@ public class RecyclerView extends ViewGroup {
         int tmpH = sumArray(heights, 0, heights.length);
         // 由于RecyclerView高度可能设置为wrap_content，所以取总高度和控件高度的最小值
         int h = Math.min(heightSize, tmpH);
-        // 设置宽高
+        // 自己设置宽高，不使用父类的super
         setMeasuredDimension(widthSize, h);
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     /**
@@ -213,6 +213,7 @@ public class RecyclerView extends ViewGroup {
             int diffY = (int) (lastY - y2);
             // 画布移动，并不影响子控件的位置
             scrollBy(0, diffY);// y方向：上滑正，下滑负
+            lastY = y2;// 更新y坐标
         }
         return super.onTouchEvent(event);
     }
@@ -325,8 +326,8 @@ public class RecyclerView extends ViewGroup {
 
         int getViewTypeCount();// Item的类型数量
 
-        int getCount();
+        int getCount();// Item的个数
 
-        int getHeight(int index);
+        int getHeight(int index);// Item 高度为了简单写死
     }
 }
