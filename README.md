@@ -27,3 +27,6 @@ FlowLayout.java
 * 回收池：能回收任意 Item 控件，并返回符合类型的Item控件；比如 onBinderViewHolder 方法中的第一个参数是从回收池中返回的。
 * 适配器：Adapter 接口，经常辅助 RecyclerView 实现列表展示；适配器模式，将用户界面展示与交互分离。
 * RecyclerView：是做触摸事件的交互，主要实现边界值判断；根据用户的触摸反馈，协助回收池对象与适配器对象之间的工作。
+
+## SVG
+[SVG地图下载地址](https://www.amcharts.com/download/)

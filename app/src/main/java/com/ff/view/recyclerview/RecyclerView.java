@@ -103,23 +103,6 @@ public class RecyclerView extends ViewGroup {
         // super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    /**
-     * 返回数组中某一部分的累加值
-     *
-     * @param array      数组
-     * @param firstIndex 起始位置
-     * @param count      个数
-     * @return 从firstIndex开始到firstIndex+count结束的累加值
-     */
-    private int sumArray(int array[], int firstIndex, int count) {
-        int sum = 0;
-        count += firstIndex;
-        for (int i = firstIndex; i < count; i++) {
-            sum += array[i];
-        }
-        return sum;
-    }
-
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         if (needRelayout || changed) {
@@ -137,13 +120,30 @@ public class RecyclerView extends ViewGroup {
                 // 判断控件的top要小于RecyclerView的高度，才进行添加
                 for (int i = 0; i < rowCount && top < height; i++) {
                     bottom = top + heights[i];
-                    // 生成一个View
+                    // 生成一个Item的View
                     View view = makeAndStep(i, 0, top, width, bottom);
                     viewList.add(view);
                     top = bottom;// 循环摆放
                 }
             }
         }
+    }
+
+    /**
+     * 返回数组中某一部分的累加值
+     *
+     * @param array      数组
+     * @param firstIndex 起始位置
+     * @param count      个数
+     * @return 从firstIndex开始到firstIndex+count结束的累加值
+     */
+    private int sumArray(int array[], int firstIndex, int count) {
+        int sum = 0;
+        count += firstIndex;
+        for (int i = firstIndex; i < count; i++) {
+            sum += array[i];
+        }
+        return sum;
     }
 
     private View makeAndStep(int row, int left, int top, int right, int bottom) {
@@ -311,7 +311,7 @@ public class RecyclerView extends ViewGroup {
     @Override
     public void removeView(View view) {
         super.removeView(view);
-        // 重写removeView，增加回收池逻辑
+        // 增加回收池逻辑
         int type = (int) view.getTag(R.id.tag_type_view);
         recycler.put(view, type);
     }
