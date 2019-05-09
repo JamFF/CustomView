@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.ff.view.custom.CarFragment;
 import com.ff.view.layout.FlowLayoutFragment;
 import com.ff.view.recyclerview.RecyclerViewFragment;
+import com.ff.view.svg.SVGFragment;
 import com.ff.view.toolbar.ToolbarFragment;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnListItemClickListener {
@@ -49,6 +50,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
                 break;
             case 3:// 手写RecyclerView
                 fragment = new RecyclerViewFragment();
+                break;
+            case 4:// SVG
+                fragment = new SVGFragment();
                 break;
             default:
                 return;
