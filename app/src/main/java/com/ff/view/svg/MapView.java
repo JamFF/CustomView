@@ -8,14 +8,13 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.annotation.Nullable;
+import android.support.annotation.UiThread;
+import android.support.v4.graphics.PathParser;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-
-import androidx.annotation.Nullable;
-import androidx.annotation.UiThread;
-import androidx.core.graphics.PathParser;
 
 import com.ff.view.R;
 

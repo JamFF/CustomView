@@ -1,12 +1,11 @@
 package com.ff.view;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.ff.view.custom.CarFragment;
 import com.ff.view.layout.FlowLayoutFragment;
@@ -54,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
             case 4:// SVG
                 fragment = new SVGFragment();
                 break;
+            /*case 5:// VLayout
+                fragment = new VLayoutFragment();
+                break;*/
             default:
                 return;
 
