@@ -12,6 +12,7 @@ import com.ff.view.layout.FlowLayoutFragment;
 import com.ff.view.recyclerview.RecyclerViewFragment;
 import com.ff.view.svg.SVGFragment;
 import com.ff.view.toolbar.ToolbarFragment;
+import com.ff.view.vlayout.VLayoutFragment;
 
 public class MainActivity extends AppCompatActivity implements MainFragment.OnListItemClickListener {
 
@@ -53,9 +54,9 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnLi
             case 4:// SVG
                 fragment = new SVGFragment();
                 break;
-            /*case 5:// VLayout
+            case 5:// VLayout
                 fragment = new VLayoutFragment();
-                break;*/
+                break;
             default:
                 return;
 
