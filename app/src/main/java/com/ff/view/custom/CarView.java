@@ -120,10 +120,10 @@ public class CarView extends View {
         // 计算小车本身要旋转的角度，就需要用弧度值乘以(180/PI)
         float degree = (float) (Math.atan2(tan[1], tan[0]) * 180 / Math.PI);
 
-        // TODO: 2019-05-04 必须先要旋转再平移
+        // 并不是一定要先旋转再平移，只不过先要旋转再平移，方便找到旋转中心点，如果先进行平移，旋转中心点不好确定，需要考虑到偏移量
         // 设置小车旋转角度，旋转中心的x坐标，旋转中心的y坐标
         carMatrix.postRotate(degree, carBitmap.getWidth() / 2f, carBitmap.getHeight() / 2f);
-        // 设置小车的x坐标，y坐标，为了居中，需要减掉小车的宽高的一半
+        // 设置小车的x坐标，y坐标，pos中记录的是小车左上坐标点，为了居中，需要将小车，向左移动宽度的一半，向上移动高度的一半
         carMatrix.postTranslate(pos[0] - carBitmap.getWidth() / 2f, pos[1] - carBitmap.getHeight() / 2f);
 
         canvas.drawPath(path, circlePaint);
